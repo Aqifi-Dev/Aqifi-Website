@@ -1,0 +1,467 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+:root{
+  --color-primary: #3368fa;
+  --color-succes: #e07b2d;
+  --color-check: #15c54a;
+  --color-yellow: #d8d800;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-grey: #767b81;
+  --color-bg: #fff;
+  --color-bg1: rgba(245, 245, 245, 0.7);
+  --color-bg2: #4d7af7;
+  --color-bg3: #1148a6;
+  --color-bg4: #a6119c86;
+  --color-bg5: #80abf7c3;
+  --color-bg6: #18c24e91;
+  --color-bg7: #977b3481;
+  --color-bg8: #5038d4;
+  --color-bg9: #23108e;
+  --color-bg10: #1c44b3;
+  --color-bg11: #299bff;
+  
+  --container-width-lg: 80%;
+  --container-width-md: 90%;
+  --container-width-sm: 94%;
+
+  --bottom-section-padding: 12rem;
+  --bottom-section-padding-mobile: 8rem;
+
+  --transition: all 400ms ease;
+}
+body {
+  font-family:'Source Sans Pro';
+  line-height: 1.7;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  overflow: scroll;
+}
+
+.container {
+  width: var(--container-width-lg);
+  margin: 0 auto;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family:'Outfit';
+  line-height: 1.2;
+}
+h1 {
+  font-size: 2.4rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.6rem;
+}
+h4 {
+  font-size: 1.3rem;
+}
+
+/* START HEADER SECTION */
+header {
+  background: rgb(25,35,125);
+  height: 75vh;
+}
+.header_maintext {
+  text-align: center;
+  color: var(--color-bg);
+  padding-top: 8rem;
+}
+
+.header_maintext h1 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+div.drop-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 200px;
+  width: 200px;
+}
+
+div.drop {
+  position: absolute;
+  top: -25%;
+  width: 100%;
+  height: 100%;
+  border-radius: 100% 5% 100% 100%;
+  transform: rotate(-45deg);
+  margin: 0px;
+  background: deepskyblue;
+  animation: drip 4s forwards;
+}
+.drop_text p {
+    color: white;
+    position: absolute;
+    font-size: 1rem;
+    padding-top: 3rem;
+    height: 1em;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    margin: auto;
+    text-align: center;
+    opacity: 0;
+    animation: appear 2s 2.5s forwards;
+
+}
+.drop_text h1{
+  color: white;
+  position: absolute;
+  font-size: 3rem;
+  height: 1em;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 2;
+  margin: auto;
+  text-align: center;
+  opacity: 0;
+  animation: appear 2s 2.5s forwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+div.drop-container:before,
+div.drop-container:after {
+  content: '';
+  position: absolute;
+  z-index: 3;
+  top: 55%;
+  right: 50%;
+  transform: translate(50%) rotateX(75deg);
+  border-radius: 100%;
+  opacity: 0;
+  width: 75%;
+  height: 75%;
+  border: 5px solid skyblue;
+  animation: dripple 2s ease-out 1s;
+}
+
+div.drop-container:after {
+  animation: dripple 2s ease-out 1.7s;
+}
+
+@keyframes drip {
+  45% {
+    top: 0;
+    border-radius: 100% 5% 100% 100%;
+    transform: rotate(-45deg);
+  }
+  100% {
+    top: 0;
+    transform: rotate(0deg);
+    border-radius: 100%;
+  }
+}
+
+@keyframes dripple {
+  0% {
+    width: 150px;
+    height: 150px;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    top: -20%;
+    opacity: 0;
+  }
+}
+/* END HEADER SECTION */
+
+
+/**************** START RESOURCES SECTION ********************/
+.resourcelist {
+  height: 100%;
+  background-image: linear-gradient(0deg, #182848, #2980b9);
+  overflow: overlay;
+}
+.resource_card_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;  
+}
+.resource_header {
+  display: flex;
+  align-items: center;
+}
+
+
+#octocat {
+  height: 300px;
+  width: 200px;
+  background: url(https://codinhood.com/static/9a146dac647e7129fa173acc0b0d437f/299c1/octocat.png) left center;
+  animation: animateSprite 15s steps(1) infinite, swim 15s ease-in-out infinite;
+  position: absolute;
+  right: -200px;
+  top: 50%;
+  margin-top: -150px;
+  z-index: 100;
+}
+
+
+@keyframes animateSprite {
+  0% {
+    background-position: -600px; /* Starting position moving left sprite */
+  }
+  20% {
+    background-position: 0px; /* Straight on sprite */
+  }
+  25% {
+    background-position: -200px; /* Moving up sprite */
+  }
+  35% {
+    background-position: -400px; /* Moving right sprite */
+  }
+  40% {
+    background-position: -400px;
+  }
+  50% {
+    background-position: -200px;  /* Moving up sprite */
+  }
+  60% {
+    background-position: -0px; /* Straight on sprite */
+  }
+  67% {
+    background-position: -600px; /* Moving up sprite */
+  }
+
+  100% {
+    background-position: -600px;
+  }
+}
+
+@keyframes swim {
+  0% {
+    transform: translate(0, 0); /* Starting position */
+  }
+  20% {
+    transform: translate(calc(-50vw - 100px), 0); /* Animate to center of screen */
+  }
+  25% {
+    transform: translate(calc(-50vw - 100px), 0); /* Stay at the center for 1 second */
+  }
+  35% {
+    transform: translate(calc(-50vw - 100px), -20vh); /* Animate up for 2 seconds */
+  }
+  50% {
+    transform: translate(-25vw, 15vh); /* Animate bottom right for 3 seconds */
+  }
+  60% {
+    transform: translate(-25vw, -20vh); /* Animate up at right of the screen */
+  }
+  67% {
+    transform: translate(-25vw, -20vh);
+  }
+
+  100% {
+    transform: translate(calc(-100vw - 300px), 0); /* Animate past left past the screen */
+  }
+}
+.ocean {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.bubble {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  position: absolute;
+  background-color: white;
+  bottom: -30px;
+  opacity: 0.2;
+  animation: bubble 15s ease-in-out infinite,
+    sideWays 4s ease-in-out infinite alternate;
+}
+
+@keyframes bubble {
+  0% {
+    transform: translateY(0%);
+    opacity: 0.06;
+  }
+  100% {
+    transform: translateY(-120vh);
+  }
+}
+
+@keyframes sideWays {
+  0% {
+    margin-left: 0px;
+  }
+  100% {
+    margin-left: 200px;
+  }
+}
+
+.bubble--1 {
+  left: 10%;
+  animation-delay: 0.5s;
+  animation-duration: 16s;
+  opacity: 0.2;
+}
+
+.bubble--2 {
+  width: 15px;
+  height: 15px;
+  left: 40%;
+  animation-delay: 1s;
+  animation-duration: 10s;
+  opacity: 0.1;
+}
+
+.bubble--3 {
+  width: 10px;
+  height: 10px;
+  left: 30%;
+  animation-delay: 5s;
+  animation-duration: 20s;
+  opacity: 0.3;
+}
+
+.bubble--4 {
+  width: 25px;
+  height: 25px;
+  left: 40%;
+  animation-delay: 8s;
+  animation-duration: 17s;
+  opacity: 0.2;
+}
+
+.bubble--5 {
+  width: 30px;
+  height: 30px;
+  left: 60%;
+  animation-delay: 10s;
+  animation-duration: 15s;
+  opacity: 0.1;
+}
+
+.bubble--6 {
+  width: 10px;
+  height: 10px;
+  left: 80%;
+  animation-delay: 3s;
+  animation-duration: 30s;
+  opacity: 0.4;
+}
+
+.bubble--7 {
+  width: 15px;
+  height: 15px;
+  left: 90%;
+  animation-delay: -7s;
+  animation-duration: 25s;
+  opacity: 0.3;
+}
+
+.bubble--9 {
+  width: 20px;
+  height: 20px;
+  left: 50%;
+  bottom: 30px;
+  animation-delay: -5s;
+  animation-duration: 19s;
+  opacity: 0.2;
+}
+
+.bubble--10 {
+  width: 40px;
+  height: 40px;
+  left: 30%;
+  bottom: 30px;
+  animation-delay: -21s;
+  animation-duration: 16s;
+  opacity: 0.3;
+}
+
+.bubble--11 {
+  width: 30px;
+  height: 30px;
+  left: 60%;
+  bottom: 30px;
+  animation-delay: -13.75s;
+  animation-duration: 20s;
+  opacity: 0.3;
+}
+
+.bubble--11 {
+  width: 25px;
+  height: 25px;
+  left: 90%;
+  bottom: 30px;
+  animation-delay: -10.5s;
+  animation-duration: 19s;
+  opacity: 0.3;
+}
+.resource_row {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding-top: 3rem;  
+  padding-right: 3rem;
+  padding-left: 2rem;
+}
+.last-row {
+  padding-bottom: 3rem;
+}
+.resource_text {
+  display: flex;
+  align-items: center;
+  color: var(--color-bg);
+  padding-left: 1.5rem;
+  text-align: center;
+}
+.resource_text h2 {
+  font-weight: 400;
+  font-size: 2rem;
+}
+/* END RESOURCES SECTION */
+.card-img-top {
+  height: 225px;
+  border-top-right-radius: 1rem !important;
+  border-top-left-radius: 1rem !important;
+}
+
+.cards-wrapper{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  gap: 2rem;
+}
+.card {
+  border-top-right-radius: 1rem !important;
+  border-top-left-radius: 1rem !important;
+  border-bottom-right-radius: 1rem !important;
+  border-bottom-left-radius: 1rem !important;
+  box-shadow: 1rem 0 1rem rgba(0, 0, 0, 0.1);
+  border: none !important;
+}
+.resource {
+	padding-top: 6rem;
+}

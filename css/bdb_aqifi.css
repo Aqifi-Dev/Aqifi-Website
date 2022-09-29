@@ -1,0 +1,107 @@
+.nav_dashboard_business {
+    background: linear-gradient(90deg, rgba(43,43,176,1) 0%, rgba(42,119,222,1) 100%);
+}
+.nav_dashboard {
+    background: linear-gradient(90deg, rgb(27 87 255 / 80%) 0%, rgb(86 79 213) 100%);
+    box-shadow: 0 3px rgb(0 0 0 / 60%);
+}
+.nav_container_dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+}
+.nav_dash_ul a {
+    font-size: 1rem;
+    color: var(--color-white);
+}
+.nav_dash_ul a:hover {
+    font-size: 1rem;
+    color: var(--color-white);
+}
+nav button{
+    display: none;
+}
+.nav_menu {
+    display: flex;
+    gap: 3rem;
+}
+
+.dashboard_header_admin {
+    background: linear-gradient(0deg, rgb(255 255 255) 75%, rgb(175 175 175) 100%);
+    text-align: center;
+    max-width: 100vw;
+    padding-bottom: 5rem;
+    color: var(--color-white);
+    font-weight: 100;
+    border-bottom: 0.5px solid #000;
+}
+.dashboard_header_topsection {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    padding-top: 4rem;
+    color: #000;
+}
+.dashboard_header_topsection a {
+    color: #000;
+}
+
+.btn-dashcard {
+    display: inline-block;
+    background-color: transparent;
+    color: #000;
+    padding: 0 1rem;
+    border: 2px solid #000;
+    font-weight: 300;
+    transition: var(--transition);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.btn-dashcard:hover {
+    transform:scale(1.1,1.1);
+    -webkit-transform:scale(1.1,1.1);
+    -moz-transform:scale(1.1,1.1);
+    color: #000;
+}
+
+.header_content_text {
+    grid-template-columns: repeat(6, 1fr);
+    color: #000;
+    border: 1px solid #000;
+}
+
+.header_content_information {
+    display: grid;
+    gap: 1.2rem;
+    padding: 0.8rem 1.5rem 0.8rem 1.5rem;
+    border: 1px #000 solid;
+    color: #000;
+    grid-template-columns: repeat(6, 1fr);
+}
+.header_content_information a {
+    margin-left: 10px;
+}
+.dashboard_header_admin .header_content_information {
+    font-size: 1.1rem;
+}
+
+.businessdb .app_dynamic_blocks {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.dynamicblock_items:nth-child(4) h1{
+    font-weight: 300;
+    font-size: 1.6rem;
+}
+
+.jf-e {
+    justify-content: end;
+}
+
+
+.modal-content {
+    background-color: #ffffff99 !important;
+}
