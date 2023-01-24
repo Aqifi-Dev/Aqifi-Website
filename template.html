@@ -146,7 +146,19 @@
 						 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal1">
 							Launch Into NFTs
 						</button>
-						
+
+            <form action="#">
+              <label for="name-enter-nftid">Enter NFT_ID: &nbsp;</label>
+              <input id="nft_id" alt="nft_id" type="number" step="1" min=0 value="" />
+              <button id="get-metadata" type="submit">Get NFT Metadata</button>
+      
+              <label for="name-mint-nft">Mint NFT: &nbsp;</label>
+              <input id="nft_to" alt="nft_to" type="text" value="hvnpv-7tz4x-urwpp-mtaw3-75xzo-v5mwr-b43ba-qgrtn-pc4kv-zy2dg-tqe"/>
+              <input id="nft_metadata" alt="nft_metadata" type="text" value="nft_name:Donkey" />
+              <button id="mint-nft" type="submit">Mint NFT</button>
+            </form>
+            <section id="metadata"></section>
+
 						<!-- Modal -->
 						<div class="modal fade Modal1" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 							<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
